@@ -1,3 +1,5 @@
-public class Validator {
+public interface Validator {
+
+    boolean pass_length();
 
 }
