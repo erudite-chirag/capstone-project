@@ -20,7 +20,7 @@ public class Test implements Validator {
     public void passContainsUpperCase(String pass) throws InvalidPassword {
         boolean f = false;
         for (int i = 0; i < pass.length(); i++) {
-            if (pass.charAt(i) > 'A' && pass.charAt(i) < 'Z') {
+            if (pass.charAt(i) >= 'A' && pass.charAt(i) <= 'Z') {
                 f = true;
                 break;
             }
@@ -33,7 +33,7 @@ public class Test implements Validator {
     public void passContainsLowerCase(String pass) throws InvalidPassword {
         boolean f = false;
         for (int i = 0; i < pass.length(); i++) {
-            if (pass.charAt(i) > 'a' && pass.charAt(i) < 'z') {
+            if (pass.charAt(i) >= 'a' && pass.charAt(i) <= 'z') {
                 f = true;
                 break;
             }
@@ -46,12 +46,38 @@ public class Test implements Validator {
     public void passContainsDigits(String pass) throws InvalidPassword {
         boolean f = false;
         for (int i = 0; i < pass.length(); i++) {
-            if (pass.charAt(i) > '0' && pass.charAt(i) < '9') {
+            if (pass.charAt(i) >= '0' && pass.charAt(i) <= '9') {
                 f = true;
                 break;
             }
         }
         if (!f)
             throw new InvalidPassword("Invalid Password! Must constain Numbers 0-9.");
+    }
+
+    @Override
+    public void passContainsThreeSpecialChars(String pass) throws InvalidPassword {
+        short count = 0;
+        // Allowed Special Characters are - !, @, #, $, %, ^, &, *, (, ), _, -, and ~
+        for (int i = 0; i < pass.length(); i++) {
+            if (pass.charAt(i) == '!' ||
+                    pass.charAt(i) == '@' ||
+                    pass.charAt(i) == '#' ||
+                    pass.charAt(i) == '$' ||
+                    pass.charAt(i) == '%' ||
+                    pass.charAt(i) == '^' ||
+                    pass.charAt(i) == '&' ||
+                    pass.charAt(i) == '*' ||
+                    pass.charAt(i) == '(' ||
+                    pass.charAt(i) == ')' ||
+                    pass.charAt(i) == '_' ||
+                    pass.charAt(i) == '-' ||
+                    pass.charAt(i) == '~') {
+
+                count++;
+            }
+        }
+        if (count < 3)
+            throw new InvalidPassword("Invalid Password! Must constain 3 Special Characters.");
     }
 }

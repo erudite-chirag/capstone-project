@@ -13,4 +13,8 @@ public interface Validator {
     // Password string should consist of Numbers - (0-9)
     void passContainsDigits(String pass);
 
+    // Passowrd string should consist of atleast 3 Special Characters.
+    // Allowed Special Characters are - !, @, #, $, %, ^, &, *, (, ), _, -, and ~
+    void passContainsThreeSpecialChars(String pass);
+
 }

@@ -17,7 +17,8 @@ public class App {
             // test.pass_max_length(pass);
             // test.passContainsUpperCase(pass);
             // test.passContainsLowerCase(pass);
-            test.passContainsDigits(pass);
+            // test.passContainsDigits(pass);
+            test.passContainsThreeSpecialChars(pass);
 
         }
 
