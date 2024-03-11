@@ -13,8 +13,11 @@ public class App {
         Test test = new Test();
 
         if (flag) {
-            test.pass_min_length(pass);
-            test.pass_max_length(pass);
+            // test.pass_min_length(pass);
+            // test.pass_max_length(pass);
+            // test.passContainsUpperCase(pass);
+            // test.passContainsLowerCase(pass);
+
         }
 
         // System.out.println(user + " " + pass);
