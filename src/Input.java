@@ -2,14 +2,18 @@ import java.util.Scanner;
 
 class Input extends App {
     Scanner ob = new Scanner(System.in);
+    UserCredentials userCredentials = new UserCredentials();
 
-    protected String get_user() {
+    protected void get_user() {
         System.out.println("Username:");
-        return ob.nextLine();
+        // Set username and password in UserCredentials object
+        userCredentials.setUsername(ob.nextLine());
+        // return
     }
 
-    protected String get_pass() {
+    protected void get_pass() {
         System.out.println("Password:");
-        return ob.nextLine();
+        userCredentials.setPassword(ob.nextLine());
+        // return ob.nextLine();
     }
 }
