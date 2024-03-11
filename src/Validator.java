@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public interface Validator {
 
     void pass_min_length(String pass);
@@ -33,4 +35,8 @@ public interface Validator {
 
     // Password string cannot have 3 same special charaters consecutively
     void passScharSequenceCheck(String pass);
+
+    // Password string cannot have any characters matched from the given list
+    // (Common Passwords)
+    void passCommonPasswords(String pass) throws IOException;
 }

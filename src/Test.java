@@ -1,4 +1,7 @@
-import java.util.regex.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Test implements Validator {
 
@@ -184,6 +187,25 @@ public class Test implements Validator {
                     count = 0;
 
             }
+        }
+    }
+
+    @Override
+    public void passCommonPasswords(String pass) throws IOException {
+        try {
+            File f = new File("CommonPass.txt");
+            FileReader fr = new FileReader(f);
+            BufferedReader reader = new BufferedReader(fr);
+            String line = reader.readLine();
+            while (line != null) {
+                if (pass.equals(line)) {
+                    throw new InvalidPassword("Invalid Password! Cannot be a common password");
+                }
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("IOException:" + e);
         }
     }
 }

@@ -23,7 +23,8 @@ public class App {
             // test.passContains3Upper3LowerChar(pass);
             // test.passSameCharSequenceCheck(pass);
             // test.passContainsUsername(user, pass);
-            test.passScharSequenceCheck(pass);
+            // test.passScharSequenceCheck(pass);
+            test.passCommonPasswords(pass);
 
         }
 
