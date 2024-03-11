@@ -10,7 +10,6 @@ public class Test implements Validator {
         int len = pass.length();
         if (len < 12)
             throw new InvalidPassword(" Minimum length is 12 charaters.");
-        // return true;
     }
 
     @Override
@@ -18,7 +17,6 @@ public class Test implements Validator {
         int len = pass.length();
         if (len > 20)
             throw new InvalidPassword(" Maximum length is 20 charaters.");
-        // return true;
     }
 
     @Override
