@@ -41,4 +41,17 @@ public class Test implements Validator {
         if (!f)
             throw new InvalidPassword("Invalid Password! Must constain Lower Case Character.");
     }
+
+    @Override
+    public void passContainsDigits(String pass) throws InvalidPassword {
+        boolean f = false;
+        for (int i = 0; i < pass.length(); i++) {
+            if (pass.charAt(i) > '0' && pass.charAt(i) < '9') {
+                f = true;
+                break;
+            }
+        }
+        if (!f)
+            throw new InvalidPassword("Invalid Password! Must constain Numbers 0-9.");
+    }
 }
