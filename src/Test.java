@@ -80,4 +80,33 @@ public class Test implements Validator {
         if (count < 3)
             throw new InvalidPassword("Invalid Password! Must constain 3 Special Characters.");
     }
+
+    @Override
+    public void passStartsWithSchar2Digit(String pass) {
+        boolean f = false;
+        if ((pass.charAt(0) == '!' ||
+                pass.charAt(0) == '@' ||
+                pass.charAt(0) == '#' ||
+                pass.charAt(0) == '$' ||
+                pass.charAt(0) == '%' ||
+                pass.charAt(0) == '^' ||
+                pass.charAt(0) == '&' ||
+                pass.charAt(0) == '*' ||
+                pass.charAt(0) == '(' ||
+                pass.charAt(0) == ')' ||
+                pass.charAt(0) == '_' ||
+                pass.charAt(0) == '-' ||
+                pass.charAt(0) == '~')) {
+            f = true;
+        }
+        if (!f && ((pass.charAt(0) >= '0' && pass.charAt(0) <= '9') ||
+                (pass.charAt(1) >= '0' && pass.charAt(1) <= '9'))) {
+            f = true;
+        }
+
+        if (!f) {
+            throw new InvalidPassword("Invalid Password! Must Start With a Special Character or Double Digit Number.");
+        }
+    }
+
 }

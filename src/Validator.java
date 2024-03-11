@@ -17,4 +17,7 @@ public interface Validator {
     // Allowed Special Characters are - !, @, #, $, %, ^, &, *, (, ), _, -, and ~
     void passContainsThreeSpecialChars(String pass);
 
+    // Password string should start with either any special character or 2 digit
+    // number
+    void passStartsWithSchar2Digit(String pass);
 }
