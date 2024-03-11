@@ -20,7 +20,8 @@ public class App {
             // test.passContainsDigits(pass);
             // test.passContainsThreeSpecialChars(pass);
             // test.passStartsWithSchar2Digit(pass);
-            test.passContains3Upper3LowerChar(pass);
+            // test.passContains3Upper3LowerChar(pass);
+            test.passSameCharSequenceCheck(pass);
 
         }
 

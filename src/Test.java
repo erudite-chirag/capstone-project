@@ -125,4 +125,20 @@ public class Test implements Validator {
         }
     }
 
+    @Override
+    public void passSameCharSequenceCheck(String pass) {
+        short count = 0;
+        for (int i = 0; i < pass.length() - 1; i++) {
+            if (pass.charAt(i) == pass.charAt(i + 1)) {
+                count++;
+                if (count >= 4) {
+                    throw new InvalidPassword(
+                            "Invalid Password! Cannot Contain Same Characters or Numbers more than 5 times .");
+                }
+                continue;
+            } else
+                count = 0;
+        }
+    }
+
 }
