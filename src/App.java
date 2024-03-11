@@ -13,18 +13,8 @@ public class App {
         Test test = new Test();
 
         if (flag) {
-            boolean min_len = test.pass_min_length(pass);
-            if (!min_len) {
-                System.out.println("Password Invalid! Minimum 12 characters required");
-                flag = false;
-            }
-        }
-        if (flag) {
-            boolean max_len = test.pass_max_length(pass);
-            if (!max_len) {
-                System.out.println("Password Invalid! Maximum 20 characters.");
-                flag = false;
-            }
+            test.pass_min_length(pass);
+            test.pass_max_length(pass);
         }
 
         // System.out.println(user + " " + pass);
