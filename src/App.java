@@ -13,19 +13,18 @@ public class App {
         Test test = new Test();
 
         if (flag) {
-            // test.pass_min_length(pass);
-            // test.pass_max_length(pass);
-            // test.passContainsUpperCase(pass);
-            // test.passContainsLowerCase(pass);
-            // test.passContainsDigits(pass);
-            // test.passContainsThreeSpecialChars(pass);
-            // test.passStartsWithSchar2Digit(pass);
-            // test.passContains3Upper3LowerChar(pass);
-            // test.passSameCharSequenceCheck(pass);
-            // test.passContainsUsername(user, pass);
-            // test.passScharSequenceCheck(pass);
+            test.pass_min_length(pass);
+            test.pass_max_length(pass);
+            test.passContainsUpperCase(pass);
+            test.passContainsLowerCase(pass);
+            test.passContainsDigits(pass);
+            test.passContainsThreeSpecialChars(pass);
+            test.passStartsWithSchar2Digit(pass);
+            test.passContains3Upper3LowerChar(pass);
+            test.passSameCharSequenceCheck(pass);
+            test.passContainsUsername(user, pass);
+            test.passScharSequenceCheck(pass);
             test.passCommonPasswords(pass);
-
         }
 
         // System.out.println(user + " " + pass);
