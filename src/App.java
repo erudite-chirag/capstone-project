@@ -10,16 +10,17 @@ public class App {
         final String pass = in.get_pass();
         boolean flag = true;
         App obj = new App();
+        Test test = new Test();
 
         if (flag) {
-            boolean min_len = obj.pass_min_length(pass);
+            boolean min_len = test.pass_min_length(pass);
             if (!min_len) {
                 System.out.println("Password Invalid! Minimum 12 characters required");
                 flag = false;
             }
         }
         if (flag) {
-            boolean max_len = obj.pass_max_length(pass);
+            boolean max_len = test.pass_max_length(pass);
             if (!max_len) {
                 System.out.println("Password Invalid! Maximum 20 characters.");
                 flag = false;
@@ -30,18 +31,6 @@ public class App {
 
     }
 
-    public boolean pass_min_length(String pass) {
-        int len = pass.length();
-        if (len < 12)
-            return false;
-        return true;
-    }
-
-    public boolean pass_max_length(String pass) {
-        int len = pass.length();
-        if (len > 20)
-            return false;
-        return true;
-    }
+    // Password string must consist of Characters - Upper Case (A-Z)
 
 }
