@@ -27,4 +27,7 @@ public interface Validator {
 
     // Password string cannot contain 5 same characters or numbers consecutively
     void passSameCharSequenceCheck(String pass);
+
+    // Password string cannot have the UserName into it at any position
+    void passContainsUsername(String user, String pass);
 }

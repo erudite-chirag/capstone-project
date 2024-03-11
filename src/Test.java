@@ -1,3 +1,5 @@
+import java.util.regex.*;
+
 public class Test implements Validator {
 
     @Override
@@ -138,6 +140,17 @@ public class Test implements Validator {
                 continue;
             } else
                 count = 0;
+        }
+    }
+
+    @Override
+    public void passContainsUsername(String user, String pass) {
+        user = user.toLowerCase();
+        pass = pass.toLowerCase();
+
+        boolean f = pass.contains(user);
+        if (f) {
+            throw new InvalidPassword("Invalid Password! Password Cannot Contain Username in it");
         }
     }
 
