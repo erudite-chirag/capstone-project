@@ -15,21 +15,25 @@ public class App {
             flag = false;
             // Input Section of Program
             Input in = new Input();
-            final String user = in.get_user();
-            final String pass = in.get_pass();
+            // final String user = in.get_user();
+            // final String pass = in.get_pass();
+            UserCredentials userCredentials = new UserCredentials();
+
+            // private String user = userCredentials.getUsername();
+            // private String pass = userCredentials.getPassword();
             try {
-                test.pass_min_length(pass);
-                test.pass_max_length(pass);
-                test.passContainsUpperCase(pass);
-                test.passContainsLowerCase(pass);
-                test.passContainsDigits(pass);
-                test.passContainsThreeSpecialChars(pass);
-                test.passStartsWithSchar2Digit(pass);
-                test.passContains3Upper3LowerChar(pass);
-                test.passSameCharSequenceCheck(pass);
-                test.passContainsUsername(user, pass);
-                test.passScharSequenceCheck(pass);
-                test.passCommonPasswords(pass);
+                test.pass_min_length(userCredentials.getPassword());
+                test.pass_max_length(userCredentials.getPassword());
+                test.passContainsUpperCase(userCredentials.getPassword());
+                test.passContainsLowerCase(userCredentials.getPassword());
+                test.passContainsDigits(userCredentials.getPassword());
+                test.passContainsThreeSpecialChars(userCredentials.getPassword());
+                test.passStartsWithSchar2Digit(userCredentials.getPassword());
+                test.passContains3Upper3LowerChar(userCredentials.getPassword());
+                test.passSameCharSequenceCheck(userCredentials.getPassword());
+                test.passContainsUsername(userCredentials.getUsername(), userCredentials.getPassword());
+                test.passScharSequenceCheck(userCredentials.getPassword());
+                test.passCommonPasswords(userCredentials.getPassword());
                 flag = true;
             } catch (InvalidPassword e) {
                 System.out.println("Invalid Password! " + e);
