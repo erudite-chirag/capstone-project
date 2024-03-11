@@ -34,14 +34,14 @@ public class App {
             } catch (InvalidPassword e) {
                 System.out.println(e);
             }
-            // if (!flag && i == 3) {
-            // System.out.println("Do you want to retry? Yes or No");
-            // String reply = sc.nextLine();
-            // if (reply.charAt(0) == 'y' || reply.charAt(0) == 'Y') {
-            // i = 0;
-            // }
-            // } else if (flag)
-            // break;
+            if (!flag && i == 3) {
+                System.out.println("Do you want to retry? Yes or No");
+                String reply = sc.nextLine();
+                if (reply.charAt(0) == 'y' || reply.charAt(0) == 'Y') {
+                    i = 0;
+                }
+            } else if (flag)
+                break;
         }
 
         // System.out.println(user + " " + pass);
