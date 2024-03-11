@@ -77,19 +77,7 @@ public class Test implements Validator {
     @Override
     public void passStartsWithSchar2Digit(String pass) {
         boolean f = false;
-        if ((pass.charAt(0) == '!' ||
-                pass.charAt(0) == '@' ||
-                pass.charAt(0) == '#' ||
-                pass.charAt(0) == '$' ||
-                pass.charAt(0) == '%' ||
-                pass.charAt(0) == '^' ||
-                pass.charAt(0) == '&' ||
-                pass.charAt(0) == '*' ||
-                pass.charAt(0) == '(' ||
-                pass.charAt(0) == ')' ||
-                pass.charAt(0) == '_' ||
-                pass.charAt(0) == '-' ||
-                pass.charAt(0) == '~')) {
+        if ((SpecialChars.SpecialChar(pass, 0))) {
             f = true;
         }
         if (!f && ((pass.charAt(0) >= '0' && pass.charAt(0) <= '9') ||
@@ -150,19 +138,7 @@ public class Test implements Validator {
         short count = 0;
         // Allowed Special Characters are - !, @, #, $, %, ^, &, *, (, ), _, -, and ~
         for (int i = 0; i < pass.length() - 1; i++) {
-            if (pass.charAt(i) == '!' ||
-                    pass.charAt(i) == '@' ||
-                    pass.charAt(i) == '#' ||
-                    pass.charAt(i) == '$' ||
-                    pass.charAt(i) == '%' ||
-                    pass.charAt(i) == '^' ||
-                    pass.charAt(i) == '&' ||
-                    pass.charAt(i) == '*' ||
-                    pass.charAt(i) == '(' ||
-                    pass.charAt(i) == ')' ||
-                    pass.charAt(i) == '_' ||
-                    pass.charAt(i) == '-' ||
-                    pass.charAt(i) == '~') {
+            if (SpecialChars.SpecialChar(pass, i)) {
 
                 if (pass.charAt(i) == pass.charAt(i + 1)) {
                     count++;
