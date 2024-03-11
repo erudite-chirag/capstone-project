@@ -154,4 +154,36 @@ public class Test implements Validator {
         }
     }
 
+    @Override
+    public void passScharSequenceCheck(String pass) {
+        short count = 0;
+        // Allowed Special Characters are - !, @, #, $, %, ^, &, *, (, ), _, -, and ~
+        for (int i = 0; i < pass.length() - 1; i++) {
+            if (pass.charAt(i) == '!' ||
+                    pass.charAt(i) == '@' ||
+                    pass.charAt(i) == '#' ||
+                    pass.charAt(i) == '$' ||
+                    pass.charAt(i) == '%' ||
+                    pass.charAt(i) == '^' ||
+                    pass.charAt(i) == '&' ||
+                    pass.charAt(i) == '*' ||
+                    pass.charAt(i) == '(' ||
+                    pass.charAt(i) == ')' ||
+                    pass.charAt(i) == '_' ||
+                    pass.charAt(i) == '-' ||
+                    pass.charAt(i) == '~') {
+
+                if (pass.charAt(i) == pass.charAt(i + 1)) {
+                    count++;
+                    if (count >= 2) {
+                        throw new InvalidPassword(
+                                "Invalid Password! Cannot Contain 3 Same Special Characters Consecutively .");
+                    }
+                    continue;
+                } else
+                    count = 0;
+
+            }
+        }
+    }
 }

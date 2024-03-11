@@ -30,4 +30,7 @@ public interface Validator {
 
     // Password string cannot have the UserName into it at any position
     void passContainsUsername(String user, String pass);
+
+    // Password string cannot have 3 same special charaters consecutively
+    void passScharSequenceCheck(String pass);
 }

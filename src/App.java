@@ -22,7 +22,8 @@ public class App {
             // test.passStartsWithSchar2Digit(pass);
             // test.passContains3Upper3LowerChar(pass);
             // test.passSameCharSequenceCheck(pass);
-            test.passContainsUsername(user, pass);
+            // test.passContainsUsername(user, pass);
+            test.passScharSequenceCheck(pass);
 
         }
 
