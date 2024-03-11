@@ -32,7 +32,7 @@ public class App {
                 test.passCommonPasswords(pass);
                 flag = true;
             } catch (InvalidPassword e) {
-                System.out.println(e);
+                System.out.println("Invalid Password! " + e);
             }
             if (!flag && i == 3) {
                 System.out.println("Do you want to retry? Yes or No");

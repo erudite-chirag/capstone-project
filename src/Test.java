@@ -9,7 +9,7 @@ public class Test implements Validator {
     public void pass_min_length(String pass) throws InvalidPassword {
         int len = pass.length();
         if (len < 12)
-            throw new InvalidPassword("Invalid Password! Minimum length is 12 charaters.");
+            throw new InvalidPassword(" Minimum length is 12 charaters.");
         // return true;
     }
 
@@ -17,7 +17,7 @@ public class Test implements Validator {
     public void pass_max_length(String pass) throws InvalidPassword {
         int len = pass.length();
         if (len > 20)
-            throw new InvalidPassword("Invalid Password! Maximum length is 20 charaters.");
+            throw new InvalidPassword(" Maximum length is 20 charaters.");
         // return true;
     }
 
@@ -31,7 +31,7 @@ public class Test implements Validator {
             }
         }
         if (!f)
-            throw new InvalidPassword("Invalid Password! Must constain Upper Case Character.");
+            throw new InvalidPassword(" Must constain Upper Case Character.");
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Test implements Validator {
             }
         }
         if (!f)
-            throw new InvalidPassword("Invalid Password! Must constain Lower Case Character.");
+            throw new InvalidPassword(" Must constain Lower Case Character.");
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Test implements Validator {
             }
         }
         if (!f)
-            throw new InvalidPassword("Invalid Password! Must constain Numbers 0-9.");
+            throw new InvalidPassword(" Must constain Numbers 0-9.");
     }
 
     @Override
@@ -65,25 +65,13 @@ public class Test implements Validator {
         short count = 0;
         // Allowed Special Characters are - !, @, #, $, %, ^, &, *, (, ), _, -, and ~
         for (int i = 0; i < pass.length(); i++) {
-            if (pass.charAt(i) == '!' ||
-                    pass.charAt(i) == '@' ||
-                    pass.charAt(i) == '#' ||
-                    pass.charAt(i) == '$' ||
-                    pass.charAt(i) == '%' ||
-                    pass.charAt(i) == '^' ||
-                    pass.charAt(i) == '&' ||
-                    pass.charAt(i) == '*' ||
-                    pass.charAt(i) == '(' ||
-                    pass.charAt(i) == ')' ||
-                    pass.charAt(i) == '_' ||
-                    pass.charAt(i) == '-' ||
-                    pass.charAt(i) == '~') {
 
+            if (SpecialChars.SpecialChar(pass, i)) {
                 count++;
             }
         }
         if (count < 3)
-            throw new InvalidPassword("Invalid Password! Must constain 3 Special Characters.");
+            throw new InvalidPassword(" Must constain 3 Special Characters.");
     }
 
     @Override
@@ -110,7 +98,7 @@ public class Test implements Validator {
         }
 
         if (!f) {
-            throw new InvalidPassword("Invalid Password! Must Start With a Special Character or Double Digit Number.");
+            throw new InvalidPassword(" Must Start With a Special Character or Double Digit Number.");
         }
     }
 
@@ -126,7 +114,7 @@ public class Test implements Validator {
             }
         }
         if (c1 < 3 || c2 < 3) {
-            throw new InvalidPassword("Invalid Password! Must Contain 3 UpperCase and 3 LowerCase Characters.");
+            throw new InvalidPassword(" Must Contain 3 UpperCase and 3 LowerCase Characters.");
         }
     }
 
@@ -138,7 +126,7 @@ public class Test implements Validator {
                 count++;
                 if (count >= 4) {
                     throw new InvalidPassword(
-                            "Invalid Password! Cannot Contain Same Characters or Numbers more than 5 times .");
+                            " Cannot Contain Same Characters or Numbers more than 5 times .");
                 }
                 continue;
             } else
@@ -153,7 +141,7 @@ public class Test implements Validator {
 
         boolean f = pass.contains(user);
         if (f) {
-            throw new InvalidPassword("Invalid Password! Password Cannot Contain Username in it");
+            throw new InvalidPassword(" Password Cannot Contain Username in it");
         }
     }
 
@@ -180,7 +168,7 @@ public class Test implements Validator {
                     count++;
                     if (count >= 2) {
                         throw new InvalidPassword(
-                                "Invalid Password! Cannot Contain 3 Same Special Characters Consecutively .");
+                                " Cannot Contain 3 Same Special Characters Consecutively .");
                     }
                     continue;
                 } else
@@ -199,7 +187,7 @@ public class Test implements Validator {
             String line = reader.readLine();
             while (line != null) {
                 if (pass.equals(line)) {
-                    throw new InvalidPassword("Invalid Password! Cannot be a common password");
+                    throw new InvalidPassword(" Cannot be a common password");
                 }
                 line = reader.readLine();
             }
