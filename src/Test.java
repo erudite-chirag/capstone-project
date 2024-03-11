@@ -109,4 +109,20 @@ public class Test implements Validator {
         }
     }
 
+    @Override
+    public void passContains3Upper3LowerChar(String pass) {
+        short c1 = 0, c2 = 0;
+        for (int i = 0; i < pass.length(); i++) {
+            if (pass.charAt(i) >= 'A' && pass.charAt(i) <= 'Z') {
+                c1++;
+            }
+            if (pass.charAt(i) >= 'a' && pass.charAt(i) <= 'z') {
+                c2++;
+            }
+        }
+        if (c1 < 3 || c2 < 3) {
+            throw new InvalidPassword("Invalid Password! Must Contain 3 UpperCase and 3 LowerCase Characters.");
+        }
+    }
+
 }

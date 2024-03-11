@@ -20,4 +20,8 @@ public interface Validator {
     // Password string should start with either any special character or 2 digit
     // number
     void passStartsWithSchar2Digit(String pass);
+
+    // Password string should have to have at least 3 Upper Case and 3 Lower Case
+    // characters
+    void passContains3Upper3LowerChar(String pass);
 }

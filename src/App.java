@@ -19,7 +19,8 @@ public class App {
             // test.passContainsLowerCase(pass);
             // test.passContainsDigits(pass);
             // test.passContainsThreeSpecialChars(pass);
-            test.passStartsWithSchar2Digit(pass);
+            // test.passStartsWithSchar2Digit(pass);
+            test.passContains3Upper3LowerChar(pass);
 
         }
 
