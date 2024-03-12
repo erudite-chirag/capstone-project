@@ -44,8 +44,10 @@ public class App {
                         exit = true;
                         break;
                     }
-                } else if (flag)
+                } else if (flag) {
+                    exit = true;
                     break;
+                }
             }
             if (exit)
                 break;
