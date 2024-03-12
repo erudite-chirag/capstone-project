@@ -7,7 +7,8 @@ class Input extends App {
     protected void get_user() {
         System.out.println("Username:");
         // Set username and password in UserCredentials object
-        userCredentials.setUsername(ob.nextLine());
+        String user = ob.nextLine();
+        userCredentials.setUsername(user);
         // return
     }
 

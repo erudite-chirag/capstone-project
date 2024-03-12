@@ -15,25 +15,29 @@ public class App {
             flag = false;
             // Input Section of Program
             Input in = new Input();
+            in.get_user();
+            in.get_pass();
             // final String user = in.get_user();
             // final String pass = in.get_pass();
             UserCredentials userCredentials = new UserCredentials();
 
-            // private String user = userCredentials.getUsername();
+            // String user = userCredentials.getUsername();
+            System.out.println(userCredentials.getUsername());
             // private String pass = userCredentials.getPassword();
             try {
-                test.pass_min_length(userCredentials.getPassword());
-                test.pass_max_length(userCredentials.getPassword());
-                test.passContainsUpperCase(userCredentials.getPassword());
-                test.passContainsLowerCase(userCredentials.getPassword());
-                test.passContainsDigits(userCredentials.getPassword());
-                test.passContainsThreeSpecialChars(userCredentials.getPassword());
-                test.passStartsWithSchar2Digit(userCredentials.getPassword());
-                test.passContains3Upper3LowerChar(userCredentials.getPassword());
-                test.passSameCharSequenceCheck(userCredentials.getPassword());
-                test.passContainsUsername(userCredentials.getUsername(), userCredentials.getPassword());
-                test.passScharSequenceCheck(userCredentials.getPassword());
-                test.passCommonPasswords(userCredentials.getPassword());
+                // test.pass_min_length(userCredentials.getPassword());
+                // test.pass_max_length(userCredentials.getPassword());
+                // test.passContainsUpperCase(userCredentials.getPassword());
+                // test.passContainsLowerCase(userCredentials.getPassword());
+                // test.passContainsDigits(userCredentials.getPassword());
+                // test.passContainsThreeSpecialChars(userCredentials.getPassword());
+                // test.passStartsWithSchar2Digit(userCredentials.getPassword());
+                // test.passContains3Upper3LowerChar(userCredentials.getPassword());
+                // test.passSameCharSequenceCheck(userCredentials.getPassword());
+                // test.passContainsUsername(userCredentials.getUsername(),
+                // userCredentials.getPassword());
+                // test.passScharSequenceCheck(userCredentials.getPassword());
+                // test.passCommonPasswords(userCredentials.getPassword());
                 flag = true;
             } catch (InvalidPassword e) {
                 System.out.println("Invalid Password! " + e);

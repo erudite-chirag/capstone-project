@@ -2,19 +2,20 @@ public class UserCredentials {
     private String username;
     private String password;
 
-    protected void setUsername(String username) {
+    public void setUsername(String username) {
+        // System.out.println(username);
         this.username = username;
     }
 
-    protected String getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    protected void setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    protected String getPassword() {
+    public String getPassword() {
         return password;
     }
 }
