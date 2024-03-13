@@ -52,11 +52,6 @@ public class App {
             if (exit)
                 break;
         }
-
         // System.out.println(user + " " + pass);
-
     }
-
-    // Password string must consist of Characters - Upper Case (A-Z)
-
 }
