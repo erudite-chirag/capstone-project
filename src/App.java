@@ -11,12 +11,12 @@ public class App {
         Test test = new Test();
         Scanner sc = new Scanner(System.in);
         UserCredentials userCredentials = new UserCredentials();
-        for (int k = 1;; k++) {
+        for (int k = 1; exit == false; k++) {
             if (k > 1)
-                System.out.println("Maximumn Tries Reached. Retry");
+                System.out.println("\nMaximumn Tries Reached. Retry");
             Input in = new Input();
             in.get_user(userCredentials);
-            for (int i = 1; i <= 6; i++) {
+            for (int i = 1; i <= 6 && exit == false; i++) {
                 flag = false;
                 in.get_pass(userCredentials);
                 try {
@@ -38,13 +38,23 @@ public class App {
                     System.out.println("Invalid Password! " + e);
                 }
                 if (!flag && i <= 5 && i % 3 == 0) {
-                    System.out.println("Do you want to retry? Yes or No");
-                    String reply = sc.nextLine();
-                    if (reply.charAt(0) == 'N' || reply.charAt(0) == 'n') {
-                        exit = true;
-                        break;
+                    while (!exit) {
+                        System.out.println("Do you want to retry? Yes or No");
+                        String reply = sc.nextLine().toLowerCase();
+                        if (reply.equals("n") || reply.equals("no")) {
+                            exit = true;
+                            break;
+                        } else if (reply.equals("y") || reply.equals("yes")) {
+                            exit = false;
+                            break;
+                        } else {
+                            System.out.println("\nPlease Enter Yes or No");
+                            exit = false;
+                            continue;
+                        }
                     }
                 } else if (flag) {
+                    System.out.println("Success!");
                     exit = true;
                     break;
                 }
