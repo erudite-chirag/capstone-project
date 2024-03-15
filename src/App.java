@@ -36,6 +36,9 @@ public class App {
                     flag = true;
                 } catch (InvalidPassword e) {
                     System.out.println("Invalid Password! " + e);
+                    System.out.println("Last entered password: " + userCredentials.getPassword());
+                    System.out.println("\nLast username: " + userCredentials.getUsername());
+
                 }
                 if (!flag && i <= 5 && i % 3 == 0) {
                     while (!exit) {
@@ -46,6 +49,7 @@ public class App {
                             break;
                         } else if (reply.equals("y") || reply.equals("yes")) {
                             exit = false;
+                            System.out.println("\nLast username: " + userCredentials.getUsername());
                             break;
                         } else {
                             System.out.println("\nPlease Enter Yes or No");
